@@ -1,3 +1,7 @@
 domain: filecoin.io
 repo: github.com/coryschwartz/lotus-kubeapi
+resources:
+- group: filecoin.io
+  kind: Wallet
+  version: v1alpha1
 version: "2"

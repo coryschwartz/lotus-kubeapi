@@ -1,0 +1,7 @@
+apiVersion: filecoin.io.filecoin.io/v1alpha1
+kind: Wallet
+metadata:
+  name: wallet-sample
+spec:
+  # Add fields here
+  foo: bar

@@ -29,7 +29,9 @@ type WalletSpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
 
 	// Foo is an example field of Wallet. Edit Wallet_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	Address   string   `json:"address,omitempty"`
+	Exported  string   `json:"exported,omitempty"`
+	Fullnodes []string `json:"fullnodes,omitempty"`
 }
 
 // WalletStatus defines the observed state of Wallet

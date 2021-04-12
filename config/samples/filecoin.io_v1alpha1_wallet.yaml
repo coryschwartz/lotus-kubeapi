@@ -3,5 +3,8 @@ kind: Wallet
 metadata:
   name: wallet-sample
 spec:
-  # Add fields here
-  foo: bar
+  keytype: "bls"
+  address: ""
+  exported: ""
+  fullnodes:
+    - "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.H5r46v0HooSxZ9TNnhUwdClrRdo05Fmg8zhm0duPwcg:http://10.98.180.195:1234"

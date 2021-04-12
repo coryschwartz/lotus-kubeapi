@@ -1,0 +1,79 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.2.5
+  creationTimestamp: null
+  name: wallets.filecoin.io.filecoin.io
+spec:
+  group: filecoin.io.filecoin.io
+  names:
+    kind: Wallet
+    listKind: WalletList
+    plural: wallets
+    singular: wallet
+  scope: Namespaced
+  validation:
+    openAPIV3Schema:
+      description: Wallet is the Schema for the wallets API
+      properties:
+        apiVersion:
+          description: 'APIVersion defines the versioned schema of this representation
+            of an object. Servers should convert recognized schemas to the latest
+            internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+          type: string
+        kind:
+          description: 'Kind is a string value representing the REST resource this
+            object represents. Servers may infer this from the endpoint the client
+            submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+          type: string
+        metadata:
+          type: object
+        spec:
+          description: WalletSpec defines the desired state of Wallet
+          properties:
+            address:
+              type: string
+            exported:
+              type: string
+            fullnodes:
+              items:
+                type: string
+              type: array
+            keytype:
+              description: Foo is an example field of Wallet. Edit Wallet_types.go
+                to remove/update
+              type: string
+          required:
+          - address
+          - exported
+          - fullnodes
+          - keytype
+          type: object
+        status:
+          description: WalletStatus defines the observed state of Wallet
+          properties:
+            deployedfullnodes:
+              description: 'INSERT ADDITIONAL STATUS FIELD - define observed state
+                of cluster Important: Run "make" to regenerate code after modifying
+                this file'
+              items:
+                type: string
+              type: array
+          required:
+          - deployedfullnodes
+          type: object
+      type: object
+  version: v1alpha1
+  versions:
+  - name: v1alpha1
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

@@ -29,15 +29,17 @@ type WalletSpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
 
 	// Foo is an example field of Wallet. Edit Wallet_types.go to remove/update
-	Address   string   `json:"address,omitempty"`
-	Exported  string   `json:"exported,omitempty"`
-	Fullnodes []string `json:"fullnodes,omitempty"`
+	KeyType   string   `json:"keytype"`
+	Address   string   `json:"address"`
+	Exported  string   `json:"exported"`
+	Fullnodes []string `json:"fullnodes"`
 }
 
 // WalletStatus defines the observed state of Wallet
 type WalletStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
+	DeployedFullnodes []string `json:"deployedfullnodes"`
 }
 
 // +kubebuilder:object:root=true
